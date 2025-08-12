@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link href="https://fonts.cdnfonts.com/css/poppins" rel="stylesheet" type="text/css">
+  <style type="text/css">
+    .u-row {
+      display: flex;
+      flex-wrap: nowrap;
+      margin-left: 0;
+      margin-right: 0
+    }
+
+    .u-row .u-col {
+      position: relative;
+      width: 100%;
+      padding-right: 0;
+      padding-left: 0
+    }
+
+    .u-row .u-col.u-col-100 {
+      flex: 0 0 100%;
+      max-width: 100%
+    }
+
+    @media (max-width:480px) {
+      .container {
+        max-width: 100% !important
+      }
+
+      .u-row:not(.no-stack) {
+        flex-wrap: wrap
+      }
+
+      .u-row:not(.no-stack) .u-col {
+        flex: 0 0 100% !important;
+        max-width: 100% !important
+      }
+    }
+
+    body,
+    html {
+      margin: 0;
+      padding: 0
+    }
+
+    html {
+      box-sizing: border-box
+    }
+
+    *,
+    :after,
+    :before {
+      box-sizing: inherit
+    }
+
+    html {
+      font-size: 14px;
+      -ms-overflow-style: scrollbar;
+      -webkit-tap-highlight-color: transparent
+    }
+
+    p {
+      margin: 0
+    }
+
+    form .error-field {
+      -webkit-animation-duration: 1s;
+      animation-duration: 1s;
+      -webkit-animation-fill-mode: both;
+      animation-fill-mode: both;
+      -webkit-animation-name: shake;
+      animation-name: shake
+    }
+
+    form .error-field input,
+    form .error-field textarea {
+      border-color: #a94442 !important;
+      color: #a94442 !important
+    }
+
+    form .field-error {
+      font-size: 14px;
+      font-weight: 700;
+      padding: 5px 10px;
+      position: absolute;
+      right: 10px;
+      top: -20px
+    }
+
+    form .field-error:after {
+      border: solid transparent;
+      border-color: #ebcccc rgba(136, 183, 213, 0) rgba(136, 183, 213, 0);
+      border-width: 5px;
+      content: " ";
+      height: 0;
+      left: 50%;
+      margin-left: -5px;
+      pointer-events: none;
+      position: absolute;
+      top: 100%;
+      width: 0
+    }
+
+    form .spinner {
+      margin: 0 auto;
+      text-align: center;
+      width: 70px
+    }
+
+    form .spinner>div {
+      -webkit-animation: sk-bouncedelay 1.4s ease-in-out infinite both;
+      animation: sk-bouncedelay 1.4s ease-in-out infinite both;
+      background-color: hsla(0, 0%, 100%, .5);
+      border-radius: 100%;
+      display: inline-block;
+      height: 12px;
+      margin: 0 2px;
+      width: 12px
+    }
+
+    form .spinner .bounce1 {
+      -webkit-animation-delay: -.32s;
+      animation-delay: -.32s
+    }
+
+    form .spinner .bounce2 {
+      -webkit-animation-delay: -.16s;
+      animation-delay: -.16s
+    }
+
+    @-webkit-keyframes sk-bouncedelay {
+
+      0%,
+      80%,
+      to {
+        -webkit-transform: scale(0)
+      }
+
+      40% {
+        -webkit-transform: scale(1)
+      }
+    }
+
+    @keyframes sk-bouncedelay {
+
+      0%,
+      80%,
+      to {
+        -webkit-transform: scale(0);
+        transform: scale(0)
+      }
+
+      40% {
+        -webkit-transform: scale(1);
+        transform: scale(1)
+      }
+    }
+
+    @-webkit-keyframes shake {
+
+      0%,
+      to {
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0)
+      }
+
+      10%,
+      30%,
+      50%,
+      70%,
+      90% {
+        -webkit-transform: translate3d(-10px, 0, 0);
+        transform: translate3d(-10px, 0, 0)
+      }
+
+      20%,
+      40%,
+      60%,
+      80% {
+        -webkit-transform: translate3d(10px, 0, 0);
+        transform: translate3d(10px, 0, 0)
+      }
+    }
+
+    @keyframes shake {
+
+      0%,
+      to {
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0)
+      }
+
+      10%,
+      30%,
+      50%,
+      70%,
+      90% {
+        -webkit-transform: translate3d(-10px, 0, 0);
+        transform: translate3d(-10px, 0, 0)
+      }
+
+      20%,
+      40%,
+      60%,
+      80% {
+        -webkit-transform: translate3d(10px, 0, 0);
+        transform: translate3d(10px, 0, 0)
+      }
+    }
+
+    .container {
+      --bs-gutter-x: 0px;
+      --bs-gutter-y: 0;
+      margin-left: auto;
+      margin-right:
+        auto;
+      padding-left: calc(var(--bs-gutter-x)*.5);
+      padding-right: calc(var(--bs-gutter-x)*.5);
+      width: 100%
+    }
+
+    a[onclick] {
+      cursor: pointer
+    }
+
+    body {
+      font-family: Poppins, sans-serif;
+      font-size: 1rem;
+      line-height: 1.5;
+      color: #fff;
+      background-color: #000
+    }
+
+    #u_body a {
+      color: #ba372a;
+      text-decoration: underline
+    }
+
+    #u_body a:hover {
+      color: #5c1711;
+      text-decoration: underline
+    }
+
+    #u_content_button_8 a:hover {
+      color: #fff !important;
+      background-color: #62e05b !important
+    }
+
+    @media (max-width:480px) {
+      #u_row_20 .v-row-background-image--inner {
+        background-size:
+          contain !important;
+        background-position: center top !important;
+        background-repeat: no-repeat !important
+      }
+
+      #u_row_20.v-row-background-image--inner {
+        background-size: contain !important;
+        background-position: center top !important;
+        background-repeat: no-repeat !important
+      }
+
+      #u_row_20 .v-row-background-image--outer {
+        background-size: contain !important;
+        background-position: center top !important;
+        background-repeat: no-repeat !important
+      }
+
+      #u_row_20.v-row-background-image--outer {
+        background-size: contain !important;
+        background-position:
+          center top !important;
+        background-repeat: no-repeat !important
+      }
+
+      #u_content_image_15.v-container-padding-padding {
+        padding: 330px 10px 0 !important
+      }
+
+      #u_content_image_15 .v-src-width {
+        width: auto !important
+      }
+
+      #u_content_image_15 .v-src-max-width {
+        max-width: 100% !important
+      }
+
+      #u_content_image_19.v-container-padding-padding {
+        padding: 0 10px !important
+      }
+
+      #u_content_image_19 .v-src-width {
+        width: 84% !important
+      }
+
+      #u_content_image_19 .v-src-max-width {
+        max-width: 84% !important
+      }
+
+      #u_content_button_8 .v-size-width {
+        width: 84% !important
+      }
+
+      #u_content_button_8 .v-size-max-width {
+        max-width: 100% !important
+      }
+
+      #u_content_text_51 .v-font-size {
+        font-size: 12px !important
+      }
+
+      #u_content_image_18 .v-src-width {
+        width: 33% !important
+      }
+
+      #u_content_image_18 .v-src-max-width {
+        max-width: 33% !important
+      }
+    }
+  </style>
+  <script>
+    const v_123_pageId = "688e5a45c972655a0ec22860";
+    const v_123_siteId = "67afccaa07f9b670b4711b89";
+    const v_123_siteType = "HTML";
+    const v_123_slug = null;
+  </script>
+
+  <!-- Google Tag Manager -->
+  <script>(function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+          new Date().getTime(), event: 'gtm.js'
+      }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-PRL759F7');</script>
+  <!-- End Google Tag Manager -->
+  <script>
+    !function (f, b, e, v, n, t, s) {
+      if (f.fbq) return; n = f.fbq = function () {
+        n.callMethod ?
+        n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+      };
+      if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+      n.queue = []; t = b.createElement(e); t.async = !0;
+      t.src = v; s = b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t, s)
+    }(window, document, 'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '761259856517236');
+    fbq('track', 'PageView');
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=761259856517236&ev=PageView&noscript=1" />
+  </noscript>
+</head>
+
+<body>
+  <div id="u_body" class="u_body" style="min-height:100vh;display:flex;flex-direction:column">
+    <div id="u_row_19" class="u_row v-row-background-image--outer" style="background-color:red;padding:0">
+      <div class="container v-row-background-image--inner" style="max-width:1000px;margin:0 auto">
+        <div class="u-row">
+          <div id="u_column_30" class="u-col u-col-100 u_column"
+            style="display:flex;background-color:red;border-top:0 solid transparent;border-left:0 solid transparent;border-right:0 solid transparent;border-bottom:0 solid transparent;border-radius:0">
+            <div style="width:100%;padding:0">
+              <div id="u_content_text_49" class="u_content_text v-container-padding-padding"
+                style="overflow-wrap:break-word;padding:10px">
+                <div class="v-font-size" style="font-size:16px;line-height:160%;text-align:center;word-wrap:break-word">
+                  <p style="line-height:160%"><strong>Hoje, $hoje-extenso estamos finalizando as VAGAS 100%
+                      GRATUITAS!</strong></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="u_row_20" class="u_row v-row-background-image--outer"
+      style="padding:0;background-image:url(/img/capturaIA.png);background-repeat:no-repeat;background-position:center center;background-size:contain">
+      <div class="container v-row-background-image--inner" style="max-width:1000px;margin:0 auto">
+        <div class="u-row">
+          <div id="u_column_31" class="u-col u-col-100 u_column"
+            style="display:flex;border-top:0 solid transparent;border-left:0 solid transparent;border-right:0 solid transparent;border-bottom:0 solid transparent;border-radius:0">
+            <div style="width:100%;padding:0">
+              <div id="u_content_image_15" class="u_content_image v-container-padding-padding"
+                style="overflow-wrap:break-word;padding:430px 10px 10px">
+                <div style="position:relative;line-height:0;text-align:center"> <img alt=""
+                    class="v-src-width v-src-max-width"
+                    src="https://123pagebuilder.s3.us-east-1.amazonaws.com/123tapronto1747787139184-03msg-02-landingpage-albano.png"
+                    style="width:100%;max-width:980px" title=""> </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="u_row_21" class="u_row v-row-background-image--outer" style="background-color:#0b0b0b;padding:0">
+      <div class="container v-row-background-image--inner" style="max-width:1000px;margin:0 auto">
+        <div class="u-row">
+          <div id="u_column_32" class="u-col u-col-100 u_column"
+            style="display:flex;background-color:#000;border-top:0 solid transparent;border-left:0 solid transparent;border-right:0 solid transparent;border-bottom:0 solid transparent;border-radius:0">
+            <div style="width:100%;padding:0">
+              <div id="u_content_image_19" class="u_content_image v-container-padding-padding"
+                style="overflow-wrap:break-word;padding:0 10px 10px">
+                <div style="position:relative;line-height:0;text-align:center"> <img alt=""
+                    class="v-src-width v-src-max-width"
+                    src="https://123pagebuilder.s3.us-east-1.amazonaws.com/123tapronto1754170510179-05msg-01-landingpage-albano.png"
+                    style="width:60%;max-width:588px" title=""> </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="u_row_22" class="u_row v-row-background-image--outer" style="padding:0">
+      <div class="container v-row-background-image--inner" style="max-width:1000px;margin:0 auto">
+        <div class="u-row">
+          <div id="u_column_33" class="u-col u-col-100 u_column"
+            style="display:flex;border-top:0 solid transparent;border-left:0 solid transparent;border-right:0 solid transparent;border-bottom:0 solid transparent;border-radius:0">
+            <div style="width:100%;padding:0">
+              <div id="u_content_html_6" class="u_content_html v-container-padding-padding"
+                style="overflow-wrap:break-word;padding:10px">
+                <div>
+                  <style>
+                    .botao_zoom a {
+                      animation: zoom-in-zoom-out 2s ease-out infinite
+                    }
+
+                    @keyframes zoom-in-zoom-out {
+                      0% {
+                        transform: scale(1, 1)
+                      }
+
+                      50% {
+                        transform: scale(1.1, 1.1)
+                      }
+
+                      100% {
+                        transform: scale(1, 1)
+                      }
+                    }
+                  </style>
+                </div>
+              </div>
+              <div id="u_content_button_8" class="u_content_button botao_zoom ; delay v-container-padding-padding"
+                style="overflow-wrap:break-word;padding:10px">
+                <div style="text-align:center"> <a href="https://api.whatsapp.com/send?phone=5512997885270&text=Quero%20liberar%20meu%20acesso%20gratuito%20a%20IA%2C%20e%20come%C3%A7ar%20operar%20autom%C3%A1tico." target="_blank"
+                    class="v-size-width v-font-size"
+                    style="color:#0b0b0b;background-color:#62e05b;border-radius:10px;line-height:250%;display:inline-block;text-decoration:none;text-align:center;padding:10px 20px;width:48%;max-width:100%;word-wrap:break-word;font-family:Poppins,sans-serif;font-size:18px;font-weight:700">
+                    <span style="line-height:45px">GARANTA SUA VAGA AGORA</span> </a> </div>
+              </div>
+              <div id="u_content_text_51" class="u_content_text v-container-padding-padding"
+                style="overflow-wrap:break-word;padding:10px 10px 0">
+                <div class="v-font-size" style="font-size:14px;line-height:140%;text-align:center;word-wrap:break-word">
+                  <p style="line-height:140%"><span style="line-height:16.8px">Todos os direitos reservados:</span></p>
+                </div>
+              </div>
+              <div id="u_content_image_18" class="u_content_image v-container-padding-padding"
+                style="overflow-wrap:break-word;padding:0 10px">
+                <div style="position:relative;line-height:0;text-align:center"> <img alt=""
+                    class="v-src-width v-src-max-width"
+                    src="/img/assinatura.png"
+                    style="width:17%;max-width:166.6px" title=""> </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script async="true" src="https://c1.cdn1tp.net/ghelper/googletagmanager.js"></script>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PRL759F7" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+</body>
+
+</html>
