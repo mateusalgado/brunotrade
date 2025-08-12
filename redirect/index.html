@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Redirecionando... | Arthur Saviski</title>
+  <link rel="icon" href="./../img/favicon.webp" type="image/x-icon">
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-size: cover;
+      background-position: center;
+      font-family: Arial, sans-serif;
+      color: white;
+      text-align: center;
+      position: relative;
+    }
+
+    /* Camada de sobreposição escura */
+    body::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('./../img/background.png');
+      background-size: cover;
+      background-position: center;
+      filter: brightness(0.5); 
+      z-index: -1;
+    }
+    
+    h1 {
+      font-size: 3em;
+      margin: 0;
+    }
+
+    button {
+      padding: 20px 40px;
+      font-size: 2em;
+      background-color: #FF0000;
+      color: white;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.5);
+      width: 100%;
+      animation: pulse 1.5s infinite;
+      text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.7);
+      display: none; /* Inicialmente o botão não é exibido */
+    }
+
+    button:hover {
+      background-color: #006400;
+    }
+
+    div {
+      padding: 0 10px;
+      max-width: 800px;
+      width: 100%;
+    }
+
+    /* Animação de pulsação */
+    @keyframes pulse {
+      0% {
+        transform: scale(.9);
+        box-shadow: 0 0 10px rgba(255, 0, 0, 0.7);
+      }
+      50% {
+        transform: scale(.95);
+        box-shadow: 0 0 20px rgba(255, 0, 0, 0.8);
+      }
+      100% {
+        transform: scale(.9);
+        box-shadow: 0 0 10px rgba(255, 0, 0, 0.7);
+      }
+    }
+
+    /* Estilos da animação de carregamento */
+    .loading {
+      margin-top: 20px;
+      font-size: 1.5em;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .loading span {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      margin: 0 5px;
+      background-color: white;
+      border-radius: 50%;
+      animation: bounce 0.6s infinite alternate;
+    }
+
+    .loading span:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+
+    .loading span:nth-child(3) {
+      animation-delay: 0.4s;
+    }
+
+    /* Animação dos círculos */
+    @keyframes bounce {
+      to {
+        transform: translateY(-15px);
+      }
+    }
+
+    /* Manter o fundo visível durante o redirecionamento */
+    #loading-animation {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+    }
+  </style>
+  
+  <script>
+    // Função para redirecionar após 400ms
+    function redirecionarComPixel() {
+      setTimeout(function() {
+        window.location.href = "https://trade.broker10.com/register?aff=426621&aff_model=revenue&afftrack=registro-aberto";
+      }, 400); // Redireciona após 400ms
+    }
+
+    // Função para mostrar o botão manual caso o redirecionamento falhe
+    function mostrarBotaoManual() {
+      document.getElementById('redirecionar-btn').style.display = 'block'; // Exibe o botão manual
+    }
+
+    // Função para iniciar o redirecionamento e exibir o botão se necessário
+    function iniciarRedirecionamento() {
+      redirecionarComPixel(); // Redireciona após 400ms
+      setTimeout(mostrarBotaoManual, 1000); // Exibe o botão manual após 1 segundo (caso o redirecionamento não tenha ocorrido)
+    }
+
+    // Inicia automaticamente após o carregamento da página
+    window.onload = iniciarRedirecionamento;
+  </script>
+</head>
+<body>
+
+  <div>
+    <h1>Você será redirecionado.</h1>
+    <br>
+    <br>
+    <br>
+      <!-- Animação de carregamento -->
+      <div class="loading" id="loading-animation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    <button id="redirecionar-btn" onclick="redirecionarComPixel()"><b>Se não for redirecionado automaticamente... <br>Clique aqui!</b></button>
+  </div>
+
+
+
+</body>
+</html>

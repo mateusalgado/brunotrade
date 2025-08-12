@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Entre na minha Comunidade de WhatsApp | Arthur Saviski</title>
+  <link rel="icon" href="./../img/favicon.webp" type="image/x-icon">
+
+<!-- Meta Pixel Code -->
+<script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1108125757538284');
+  fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=1108125757538284&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-size: cover;
+      background-position: center;
+      font-family: Arial, sans-serif;
+      color: white;
+      text-align: center;
+      position: relative; /* Importante para o ::before funcionar */
+    }
+
+    /* Camada de sobreposição escura */
+    body::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('./../img/background.png');
+      background-size: cover;
+      background-position: center;
+      filter: brightness(0.5); /* Escurece a imagem */
+      z-index: -1; /* Faz a imagem ficar atrás do conteúdo */
+    }
+    
+    h1 {
+      font-size: 3em;
+      margin: 0;
+    }
+
+    h2 {
+      font-size: 2em;
+      margin: 10px 0;
+    }
+
+    button {
+      padding: 20px 40px;
+      font-size: 2em;
+      background-color: #FF0000;
+      color: white;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.5);
+      width: 100%; /* O botão agora ocupa toda a largura da div */
+      animation: pulse 1.5s infinite; /* Animação de pulsação */
+      text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.7); /* Sombra no texto do botão */
+    }
+
+    button:hover {
+      background-color: #006400;
+    }
+
+    /* Adiciona espaçamento nas laterais */
+    div {
+      padding: 0 10px;
+      max-width: 800px;
+      width: 100%;
+    }
+
+    /* Media Query para dispositivos móveis */
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 1.8em;
+      }
+
+      h2 {
+        font-size: 1em;
+      }
+
+      button {
+        font-size: 1.3em;
+        padding: 15px 20px;
+      }
+    }
+
+    /* Animação de pulsação */
+    @keyframes pulse {
+      0% {
+        transform: scale(.9);
+        box-shadow: 0 0 10px rgba(255, 0, 0, 0.7);
+      }
+      50% {
+        transform: scale(.95);
+        box-shadow: 0 0 20px rgba(255, 0, 0, 0.8);
+      }
+      100% {
+        transform: scale(.9);
+        box-shadow: 0 0 10px rgba(255, 0, 0, 0.7);
+      }
+    }
+  </style>
+  
+  <script>
+    function redirecionarComPixel() {
+      setTimeout(function() {
+        window.location.href = "https://chat.whatsapp.com/IsmCEBsWc1DKkTvHZTkx12"; // Substitua pela URL desejada
+      }, 100);
+    }
+  </script>
+</head>
+<body>
+
+  <div>
+    <h1>Clique abaixo para lucrar todos os dias na minha</h1>
+    <h1 class="wpp" style="font-size: 1.7em; color: #00FF00;">Comunidade no WhatsApp</h1>
+    <br>
+    <button onclick="redirecionarComPixel()"><b>Garanta sua vaga gratuita!</b></button>
+    <h2>Clique no <b>Botão Acima☝️</b></h2>
+  </div>
+
+</body>
+</html>
